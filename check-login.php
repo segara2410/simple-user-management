@@ -16,10 +16,9 @@ if ($cek > 0) {
       $_SESSION['username'] = $username;
       $_SESSION['status'] = "login";
       $_SESSION['role'] = $row['role'];
+      header("location:menu.php");
+    } else {
+      header("location:index.php?pesan=gagal");
     }
   }
-
-  header("location:menu.php");
-} else {
-  header("location:index.php?pesan=gagal");
-}
+} 
