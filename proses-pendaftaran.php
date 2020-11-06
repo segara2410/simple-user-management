@@ -3,7 +3,7 @@ include('config.php');
 
 $nama = $_POST['nama'];
 $username = $_POST['username'];
-$password = $_POST['password'];
+$password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 $role = $_POST['role'] ? $_POST['role'] : 'User';
 
 $sql = "insert into member values (NULL, '$nama', '$username', '$password', '$role')";
